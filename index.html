@@ -1,12 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Animating Practice</title>
-</head>
+	<meta charset="UTF-8">
+	<title>Image Swap</title>
+	 <link rel="stylesheet" href="css/animations.css">
+	  <link rel="stylesheet" href="styles.css">
+	<style>
+		.potatoes {
+			position:relative;
+		}
+		.potato-box {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 500px;
+			height: 300px;
+			
+		}
+		#one {background-image:url('images/potato1.jpeg');background-size: cover;}
+		#two {background-image:url('images/potato2.jpeg');background-size: cover;}
+		#three {background-image:url('images/potato3.jpg');background-size: cover;}
+		.hide {display: none;}
+	</style>
+	<style>
+.bubbles {
+  height: 100px;
+  width: 100px;
+  background-color: #555;
+}
+</style>
 <body>
-<div id="animate-1" class="box"></div>
-<div id="animate-2" class="box"></div>
-<div id="animate-3" class="box"></div>
-<div id="animate-4" class="box"></div>
+
+<div class="bubbles"></div>
+
+
+</head>
+<section class="animatedParent" data-sequence="500">
+<h1 class="animated bounceInDown" data-id="1">It Works!</h1>
+</section>
+	
+<div class="potatoes">
+	<section class="animatedParent" data-sequence="500">
+	<div class="potato-box" id="one"></div>
+</section>
+	<div class="potato-box hide" id="two"></div>
+	<div class="potato-box hide" id="three"></div>
+</div>
+
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="scrips/js/css3-animate-it.js"></script>
+
+  <script>
+  	
+		$('.potato-box').click(function(){
+			$('#one').slideUp(300)
+			$('potato-box').remove('#one').delay(1000)
+			$('#two').fadeIn(400)
+		})
+
+		$('#two').click(function(){
+			$('#two').slideUp(300)
+			//$('#two').remove('#two')
+			$('potato-box').remove('#two').delay(1000)
+			$('#three').fadeIn(400)
+			//$('#three').toggleClass('hide')
+		})
+
+  </script>
+   <script type="text/javascript" src="javascript.js"></script>
+ 
 </body>
 </html>
